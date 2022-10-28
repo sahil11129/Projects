@@ -19,8 +19,5 @@ img{
 }
 body {
     background-image: url("https://github.com/sahil11129/Projects/blob/d750cfc4209b952c6ab3270636d766fdfbf590db/Wiki_Voice_bot/WatsonAvatar_3D_1920x1080-08ef8e970e75b5b1062ae94760265bff.gif");
-    background-color: #cccccc;
-    min-height:100%;
     background-size:cover;
-    background-blend-mode: multiply;
    }

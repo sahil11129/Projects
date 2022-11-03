@@ -83,7 +83,7 @@ function invokeSTT(blob) {
   };
 
   const baseUrl = new URL(
-    "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/0cfb5b5c-aad7-4de7-af40-39ba832dc3a4/v1/recognize"
+    "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/0cfb5b5c-aad7-4de7-af40-39ba832dc3a4/v1/recognize?model=en-US_Multimedia&background_audio_suppression=0.3"
   );
 
   fetch(baseUrl.href, requestOptions)

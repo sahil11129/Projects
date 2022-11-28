@@ -13,7 +13,4 @@ body, html {width: 100%; height: 100%; margin: 0; padding: 0}
     padding: 15px;  
     border: 10px solid red;
 }
-body {
-    background-image: url('https://raw.githubusercontent.com/sahil11129/Projects/main/Wiki_Voice_bot/IBM_Logo.png');
-    background-size:cover;
-   }
+

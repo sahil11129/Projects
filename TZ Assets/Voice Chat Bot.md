@@ -14,9 +14,12 @@ The user can prepare the questions as, per the business requirements, using diff
 
 After configuring and starting the required services, we can integrate the voice solution with Watson Assistant. For this solution, we have a repository that contains HTML code for a voice UI microphone button along with Watson Assistant chatbot and JavaScript for sending the request to STT and TTS services.
 
+<h2> Watson Assistant Voice Chatbot Architecture </h2>
 
-![Watson Assistant Voice Chatbot Architecture ](https://github.com/sahil11129/Projects/blob/dd5ed95bdf6da6a79a037cbbb35c9a64d2728779/TZ%20Assets/Image/Picture%201.png)
- Watson Assistant Voice Chatbot Architecture 
+![image](https://user-images.githubusercontent.com/112084296/205344854-cfb1c325-0ce3-4584-96b6-96f5c7c063ff.jpeg)
+
+
+<p align="center"> Watson Assistant Voice Chatbot Architecture </p>
  
 The architecture above introduces five features that can integrate voice functionality along with Watson Assistant.
 

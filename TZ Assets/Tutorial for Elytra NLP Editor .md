@@ -103,4 +103,4 @@ Run the `Driving_Licence_Consolidated`
 <img width="1339" alt="Screenshot 2023-02-22 at 5 21 10 PM" src="https://user-images.githubusercontent.com/112084296/220614340-0e9acc0d-0e71-4ec5-87a7-2f8d4097e4c1.png">
 
 
-
+The above result detect all the available Driving Licence Numbers in the document. So now select the final `Driving_Licence_Consolidated` canvas and click on the export button. It will generate the NLP_Canvas_Export.zip file for the custom rules for detecting Driving Licencee Number.

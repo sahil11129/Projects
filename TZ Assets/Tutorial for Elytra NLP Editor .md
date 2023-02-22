@@ -63,7 +63,7 @@ In the United States, the driver's license number pattern varies across states, 
 
 |State|Driving License Pattern|
 |-----|-----------------------|
-|California,Texas & Hawaii| [a-zA-Z]{1}[0-9]{7}|
+|California,Texas & Hawaii| [a-zA-Z]{1}[0-9]{8}|
 |Arkansas & South Carolina|[0-9]{9}|
 |Alaska & Alabama|[0-9]{7}|
 |North Carolina|[0-9]{12}|

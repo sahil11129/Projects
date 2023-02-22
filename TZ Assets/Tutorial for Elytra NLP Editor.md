@@ -1,4 +1,4 @@
-# Tutorial 
+# Tutorial for Elytra NLP Rules Editor
 
 This tutorial explains the basic concepts in the NLP editor for generating the custom rules for detecting Driving License Number.
 
@@ -40,7 +40,7 @@ Expand the Extractors, drag and drop Input Documents on the canvas. Configure wi
 
 <img width="1337" alt="image" src="https://user-images.githubusercontent.com/112084296/220580308-d5af9213-a16f-4c1c-b5c1-6b694c159b60.png">
 
-## 2. Create a dictionary of Driving License Tag 
+## 2. Create a dictionary of Driving License Keywords
 
 Under **Extractors**, drag **Dictionary** on the canvas. Connect its input to the output of **Input Documents**. 
 Rename the node to `DLicence` and enter the terms: `Driving` and `Licence`, check the IGNORE CASE option BELOW. Click **Save**.
@@ -73,7 +73,7 @@ In the United States, the driver's license number pattern varies across states, 
 Combined regular expression: `\b[a-zA-Z]{1}[0-9]{8}(\b)|\b[0-9]{9}($|\b)|\b[0-9]{7}($|\b)|[0-9]{12}($|\b)|[0-9]{2}(-| |)[0-9]{3}(-| |)[0-9]{4}|[0-9]{3}(-| |)[0-9]{3}(-| |)[0-9]{3}`
 
 
-Under Extractors, drag ReGex to the canvas. Name it `Driving_Licence_Number` and specify the regular expression as explain above. Click Save, then Run. The regular expression captures mentions of Driving Licence Number.
+Under Extractors, drag RegEx to the canvas. Name it `Driving_Licence_Number` and specify the regular expression as explain above. Click Save, then Run. The regular expression captures mentions of Driving Licence Number.
 
 <img width="1337" alt="image" src="https://user-images.githubusercontent.com/112084296/220600986-05fc88bd-5cd9-4427-b060-05538865425b.png">
 
@@ -91,7 +91,7 @@ This step helps to identify Driving Licence Number with Keywords. If you want to
 
 ## 6. Consolidat the final Driving Licence Number detection
 
-If you notice the result of step 5, it Can not detect Driving Licence Number if Keyword are after the numbers. We can add Consolidat canvas for resolving this issue. Under Refinement, drag Consolidate on the canvas and connect its input with Driving_Licence_Detect. Rename it to Driving_Licence_Consolidated Click Save.
+If you notice the result of step 5, it can not detect Driving Licence Number if Keyword are after the numbers. We can add Consolidat canvas for resolving this issue. Under Refinement, drag Consolidate on the canvas and connect its input with Driving_Licence_Detect. Rename it to Driving_Licence_Consolidated Click Save.
 
 
 

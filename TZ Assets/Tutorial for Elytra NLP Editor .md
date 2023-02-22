@@ -84,7 +84,11 @@ Under Extractors, drag ReGex to the canvas. Name it `Driving_Licence_Number` and
 
 Create a sequence called `Driving_Licence_Detect` and specify the pattern as `(<DLicence .DLicence >)<Token>{1,2}(<Driving_Licence_Number.Driving_Licence_Number>)`. Ensure the name of the first attribute is also `RevenueByDivision`, Click **Save** and **Run**.
 
-(<DLicence .DLicence >)<Token>{1,2}(<Driving_Licence_Number.Driving_Licence_Number>)
+<img width="1342" alt="Screenshot 2023-02-22 at 4 54 33 PM" src="https://user-images.githubusercontent.com/112084296/220606703-75f6c4cc-0875-4518-9010-334b34ccb65e.png">
+
+This step helps to identify Driving Licence Number with Keywords. If you want to detect only Driving Licence Number without Keywords then skip the step3 and step5 and directly prepare Regex patterns.
+
+
    
 
 

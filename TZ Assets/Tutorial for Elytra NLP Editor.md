@@ -19,7 +19,7 @@ You will find below instructions for running the NLP Editor frontend and the AQL
 3. Build the container image
    ```
    cd watson_nlp_web_tool
-   docker build -t watson_nlp_web_tool:1.0 .
+   docker build -t watson_nlp_web_tool:1.0 
    ``` 
 
 4. Run the container image with volumes mapped.

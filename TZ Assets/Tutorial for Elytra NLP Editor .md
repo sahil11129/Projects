@@ -58,7 +58,7 @@ Select the `DLicence` node, and click **Run**.
 
 ## 4. Create a regular expression to capture Driving Licence Number 
 
-In the United States, the driver's license number pattern varies across states, with each state having its own unique set of regulations and formats for assigning the license numbers, this demonstration includes 8 United State's regular expression for captures Driving Licence Number.
+In the United States, the driver's license number pattern varies across states, with each state having its own unique set of regulations and formats for assigning the license numbers, this demonstration includes 10 United State's regular expression for captures Driving Licence Number.
 
 
 |State|Driving License Pattern|

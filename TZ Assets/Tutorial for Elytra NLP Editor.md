@@ -89,9 +89,9 @@ Create a sequence called `Driving_Licence_Detect` and specify the pattern as `(<
 This step helps to identify Driving Licence Number with Keywords. If you want to detect only Driving Licence Number without Keywords then skip the step3 and step5 and directly prepare Regex patterns as shown in step4.
 
 
-## 6. Consolidat the final Driving Licence Number detection
+## 6. Consolidate the final Driving Licence Number detection
 
-If you notice the result of step 5, it can not detect Driving Licence Number if Keyword are after the numbers. We can add Consolidat canvas for resolving this issue. Under Refinement, drag Consolidate on the canvas and connect its input with Driving_Licence_Detect. Rename it to Driving_Licence_Consolidated Click Save.
+If you notice the result of step 5, it can not detect Driving Licence Number if Keyword are after the numbers. We can add Consolidate canvas for resolving this issue. Under Refinement, drag Consolidate on the canvas and connect its input with Driving_Licence_Detect. Rename it to Driving_Licence_Consolidated Click Save.
 
 
 

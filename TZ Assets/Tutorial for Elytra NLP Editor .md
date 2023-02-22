@@ -58,6 +58,26 @@ Select the `DLicence` node, and click **Run**.
 
 ## 4. Create a regular expression to capture Driving Licence Number 
 
-Under Extractors, drag ReGex to the canvas. Name it `Driving_Licence_Number` and specify the regular expression as explain below. Click Save, then Run. The regular expression captures mentions of Driving Licence Number.
+In the United States, the driver's license number pattern varies across states, with each state having its own unique set of regulations and formats for assigning the license numbers, this demonstration includes 8 United State's regular expression for captures Driving Licence Number.
 
-In the United States, the driver's license number pattern varies across states, with each state having its own unique set of regulations and formats for assigning the license numbers, this demonstration includes 8 United State Driving Licence pattern.
+
+|State|Driving License Pattern|
+|-----|-----------------------|
+|California,Texas & Hawaii| [a-zA-Z]{1}[0-9]{7}|
+|Arkansas & South Carolina|[0-9]{9}|
+|Alaska & Alabama|[0-9]{7}|
+|North Carolina|[0-9]{12}|
+|Colorado|[0-9]{2}(-)[0-9]{3}(-)[0-9]{4}|
+|New York|[0-9]{3}(-)[0-9]{3}(-)[0-9]{3}|
+
+Combined regular expression: `\b[a-zA-Z]{1}[0-9]{8}(\b)|\b[0-9]{9}($|\b)|\b[0-9]{7}($|\b)|[0-9]{12}($|\b)|[0-9]{2}(-| |)[0-9]{3}(-| |)[0-9]{4}|[0-9]{3}(-| |)[0-9]{3}(-| |)[0-9]{3}`
+
+
+Under Extractors, drag ReGex to the canvas. Name it `Driving_Licence_Number` and specify the regular expression as explain above. Click Save, then Run. The regular expression captures mentions of Driving Licence Number.
+
+<img width="1337" alt="image" src="https://user-images.githubusercontent.com/112084296/220600986-05fc88bd-5cd9-4427-b060-05538865425b.png">
+
+<img width="1338" alt="image" src="https://user-images.githubusercontent.com/112084296/220601192-87d561b4-8079-49f3-a02e-0121b591a5f8.png">
+
+
+

@@ -22,7 +22,7 @@ You will find below instructions for running the NLP Editor frontend and the AQL
    docker build -t watson_nlp_web_tool:1.0 .
    ``` 
 
-4. Run the container image with volumes mapped. Note that `/path/to/nlp-editor` is the absolute path to the `nlp-editor` repository (from Step 1).
+4. Run the container image with volumes mapped.
 
    ```
    docker run -d -p 8080:8080 --name watson_nlp_web_tool watson_nlp_web_tool:1.0

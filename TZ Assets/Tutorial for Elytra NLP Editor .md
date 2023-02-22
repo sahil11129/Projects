@@ -82,11 +82,21 @@ Under Extractors, drag ReGex to the canvas. Name it `Driving_Licence_Number` and
 
 ## 5. Create a sequence to combine the Driving Licence key words and Driving License Number 
 
-Create a sequence called `Driving_Licence_Detect` and specify the pattern as `(<DLicence .DLicence >)<Token>{1,2}(<Driving_Licence_Number.Driving_Licence_Number>)`. Ensure the name of the first attribute is also `RevenueByDivision`, Click **Save** and **Run**.
+Create a sequence called `Driving_Licence_Detect` and specify the pattern as `(<DLicence .DLicence >)<Token>{1,2}(<Driving_Licence_Number.Driving_Licence_Number>)`, Click **Save** and **Run**.
 
 <img width="1342" alt="Screenshot 2023-02-22 at 4 54 33 PM" src="https://user-images.githubusercontent.com/112084296/220606703-75f6c4cc-0875-4518-9010-334b34ccb65e.png">
 
-This step helps to identify Driving Licence Number with Keywords. If you want to detect only Driving Licence Number without Keywords then skip the step3 and step5 and directly prepare Regex patterns.
+This step helps to identify Driving Licence Number with Keywords. If you want to detect only Driving Licence Number without Keywords then skip the step3 and step5 and directly prepare Regex patterns as shown in step4.
+
+
+## 6. Consolidat the final Driving Licence Number detection
+
+If you notice the result of step 5, it Can not detect Driving Licence Number if Keyword are after the numbers. We can add Consolidat canvas for resolving this issue. Under Refinement, drag Consolidate on the canvas and connect its input with Driving_Licence_Detect. Rename it to Driving_Licence_Consolidated Click Save.
+
+
+
+<img width="1342" alt="image" src="https://user-images.githubusercontent.com/112084296/220610296-29f5b6f2-c0eb-4588-8794-0ea6d9ee1c35.png">
+
 
 
    

@@ -10,7 +10,7 @@ You will find below instructions for running the NLP Editor frontend and the AQL
 
 * Docker 
 * All-in-one docker container [Download](https://ibm.box.com/s/sw901pmlq27i0bqkb7aaiejolcgflt8q) 
-* Please request download access of all-in-one container on channel [#nlp_rules_visual_editor_canvas](https://join.slack.com/share/enQtNDg2NzI0NDMwMTcxMi0wZjk0ZGVjOWQ1ZmViNmZkMzlhNzA2MTA1ZDM4YjQzZDBkNWNhZTMwMDUyMjliNGU5MzM2OGZlN2E2NGZiNzJh)
+* Please request download access of all-in-one container on channel [#nlp_rules_visual_editor_canvas]()
 
 
 1. Follow steps below to **Run the editor locally**
@@ -38,7 +38,7 @@ You will find below instructions for running the NLP Editor frontend and the AQL
 # Generate the custom rules for Driving License Number 
 
 ## 1. Set up the input document
-Expand the Extractors, drag and drop Input Documents on the canvas. Configure with document [Driving License Data](https://ibm.box.com/s/fqm69nkg7sgtc2gvoy6oklmvvtzgpfgk). Click Upload, then Close.
+Expand the Extractors, drag and drop Input Documents on the canvas. Configure with document [Driving License Data](https://github.com/ibm-build-lab/Watson-NLP/blob/main/ML/PII-Extraction/PII_faker_LicenseNumber_sentances.txt). Click Upload, then Close.
 
 <img width="1337" alt="image" src="https://user-images.githubusercontent.com/112084296/220580308-d5af9213-a16f-4c1c-b5c1-6b694c159b60.png">
 

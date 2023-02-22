@@ -28,4 +28,7 @@ You will find below instructions for running the NLP Editor frontend and the AQL
    docker run -d -p 8080:8080 --name watson_nlp_web_tool watson_nlp_web_tool:1.0
    ```
 
-5. Open http://localhost:8080 in a web browser
+5. Open http://localhost:8080 in a web browser. 
+
+<img width="1335" alt="image" src="https://user-images.githubusercontent.com/112084296/220576702-259167c4-cbcf-48d2-9a0c-86f9c2c075e0.png">
+

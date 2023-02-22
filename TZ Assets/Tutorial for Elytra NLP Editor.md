@@ -10,9 +10,7 @@ You will find below instructions for running the NLP Editor frontend and the AQL
 
 * Docker 
 * All-in-one docker container [Download](https://ibm.box.com/s/sw901pmlq27i0bqkb7aaiejolcgflt8q) 
-* Please request download access of all-in-one container on channel [#nlp_rules_visual_editor_canvas](https://join.slack.com/share/enQtNDg2NzI0NDMwMTcxMi0wZjk0ZGVjOWQ1ZmViNmZkMzlhNzA2MTA1ZDM4YjQzZDBkNWNhZTMwMDUyMjliNGU5MzM2OGZlN2E2NGZiNzJh) 
-
-https://ibm-isl-team.slack.com/archives/D03RZJ731PA/p1677083724689499
+* Please request download access of all-in-one container on channel [#nlp_rules_visual_editor_canvas](https://ibm-isl-team.slack.com/archives/D03RZJ731PA/p1677083724689499)
 
 1. Follow steps below to **Run the editor locally**
 

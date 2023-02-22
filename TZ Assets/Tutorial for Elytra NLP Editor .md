@@ -98,7 +98,9 @@ If you notice the result of step 5, it Can not detect Driving Licence Number if 
 <img width="1342" alt="image" src="https://user-images.githubusercontent.com/112084296/220610296-29f5b6f2-c0eb-4588-8794-0ea6d9ee1c35.png">
 
 
+Run the `Driving_Licence_Consolidated`
 
-   
+<img width="1339" alt="Screenshot 2023-02-22 at 5 21 10 PM" src="https://user-images.githubusercontent.com/112084296/220614340-0e9acc0d-0e71-4ec5-87a7-2f8d4097e4c1.png">
+
 
 

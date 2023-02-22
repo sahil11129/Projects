@@ -80,4 +80,11 @@ Under Extractors, drag ReGex to the canvas. Name it `Driving_Licence_Number` and
 <img width="1338" alt="image" src="https://user-images.githubusercontent.com/112084296/220601192-87d561b4-8079-49f3-a02e-0121b591a5f8.png">
 
 
+## 5. Create a sequence to combine the Driving Licence key words and Driving License Number 
+
+Create a sequence called `Driving_Licence_Detect` and specify the pattern as `(<DLicence .DLicence >)<Token>{1,2}(<Driving_Licence_Number.Driving_Licence_Number>)`. Ensure the name of the first attribute is also `RevenueByDivision`, Click **Save** and **Run**.
+
+(<DLicence .DLicence >)<Token>{1,2}(<Driving_Licence_Number.Driving_Licence_Number>)
+   
+
 

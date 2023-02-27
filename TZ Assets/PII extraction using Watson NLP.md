@@ -15,7 +15,30 @@ This tutorial provides an introduction to IBM Watson NLP, covering the fundament
 
 To follow the steps in this tutorial, you need:
 
-* An IBMid
+* An [IBMid](https://cloud.ibm.com/login?cm_sp=ibmdev-_-developer-tutorials-_-cloudreg)
 * A Watson Studio project
-* A Python notebook 
-* Your environment set up (https://developer.ibm.com/tutorials/set-up-your-ibm-watson-libraries-environment/)
+* A Python [Pre-Trained Models notebook](https://github.com/ibm-build-lab/Watson-NLP/blob/main/ML/PII-Extraction/PII%20Extraction%20-%20Pre-Trained%20Models.ipynb)
+* A Python [Fine-Tuned Models notebook](https://github.com/ibm-build-lab/Watson-NLP/blob/main/ML/PII-Extraction/PII%20Extraction%20-%20Fine-Tuned%20Models.ipynb)
+* Your [environment set up](https://developer.ibm.com/tutorials/set-up-your-ibm-watson-libraries-environment/)
+
+# Estimated time
+
+It should take you approximately 1 hour to complete this tutorial.
+
+# Steps
+
+The tutorial consists of two part. First, it demonstrates the extraction of PII using pre-trained Watson NLP models. Second, we generate training data for custom PII entities and fine-tune the models. In this section, we focus on PII extraction models for the following PII entities: 
+
+|Pre-trained models |Fine-tuned models|
+|-------------------|-----------------|
+|Name|Employee ID|
+|Social Security Number|Salary|
+|Credit Card number|Educational Detail|
+|Email|Driving Licence Number|
+|URL|Gender|
+
+
+
+
+
+

@@ -48,4 +48,4 @@ The tutorial consists of two part. First, it demonstrates the extraction of PII 
 1. Generate the sample data set for Name, credit card number and social security number using faker library.
 
 
-![Data-Gen](Screenshots/Data Generation faker.png)
+![Data-Gen](Screenshots/Data%20Generation%20faker.png)

@@ -91,4 +91,6 @@ The term "pretrained" refers to a pre-trained BiLSTM model, which has already be
 
 
 
+![Pre-BiLSTM](Screenshots/Pre-BiLSTM.png)
 
+As shown in above result. Pre-Trained BiLSTM Model can detect the person name as `Lori Gross`. 

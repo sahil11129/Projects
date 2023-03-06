@@ -131,3 +131,7 @@ In the above Fine-tuning, `train_iob_stream` is the training data that generate 
 ![Sire-Workflow](Screenshots/Sire_workflow.png)
 
 now save the model with Syntax model as workflow model so we can directly test on the input text.
+
+## 3.1 Test the Fine-Tuned Model
+
+Now let's run the trained models with testing data, Here testing data is a sentence from test data which we generate before. 

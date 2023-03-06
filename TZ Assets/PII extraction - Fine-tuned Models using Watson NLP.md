@@ -112,3 +112,4 @@ now save the model with Syntax model as workflow model so we can directly test o
 Now let's run the trained models with testing data, Here testing data is a sentence from test data which we generate before. We can fetch single sentences : `text = pd.read_json('faker_PII_text_test.json')['text'][1]` 
 
 
+![BiLSTM-Result](Screenshots/Bilstm_result.png)

@@ -90,7 +90,23 @@ sire = watson_nlp.load(watson_nlp.download('entity-mentions_sire_en_stock-wf'))
 The term "pretrained" refers to a pre-trained BiLSTM model, which has already been trained on a large corpus of text data and can be fine-tuned or used as is for specific NLP tasks, such as PIIs or entities extraction, and so on. By using a pretrained BiLSTM model, you can leverage the knowledge learned from the training data to quickly build NLP applications with improved accuracy.
 
 
-
 ![Pre-BiLSTM](Screenshots/Pre-BiLSTM.png)
 
 As shown in above result. Pre-Trained BiLSTM Model can detect the person name as `Lori Gross`. 
+
+
+* RBR Pretrained
+
+A pretrained rule-based model is a model that has already been trained on a large corpus of text data and has a set of predefined rules for processing text data. By using a pretrained rule-based model, you can leverage the knowledge learned from the training data to quickly build NLP applications with improved accuracy.
+
+
+![Pre-RBR.png](Screenshots/Pre-RBR.png)
+
+As shown in above result. Pre-Trained RBR Model can detect the credit card numbers and social security numbers.
+
+
+## Conclusion
+
+This tutorial showed how to use the Watson NLP library and how easily you can run various PII Extraction using Pre-trained models on input text. This notebook also demonstrated one possible application of Watson NLP.
+
+Work through the [notebook](https://github.com/ibm-build-lab/Watson-NLP/blob/main/ML/PII-Extraction/PII%20Extraction%20-%20Pre-Trained%20Models.ipynb) to try out this feature.

@@ -95,4 +95,8 @@ mentions_train_template = watson_nlp.load(watson_nlp.download('file_path_entity-
 default_feature_extractor = watson_nlp.load(watson_nlp.download('feature-extractor_rbr_entity-mentions_sire_en_stock'))
 ```
 
-Step 2.2 Fine-Tune models for PII Extraction
+Step 2.2 Fine-Tuning the models
+
+Fine-tuning a BiLSTM model for PII extraction involves training the model on a labeled training dataset includes examples of PII entities.
+
+

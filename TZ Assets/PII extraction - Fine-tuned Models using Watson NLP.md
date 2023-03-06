@@ -44,6 +44,15 @@ The tutorial consists of two part. First, it demonstrates the extraction of PII 
 ## Step 1. Generate the data for custom PII 
 
 
-1. Generate the sample data set for Name, credit card number and social security number using faker library.
+1. Generate the sample data set for train the custom PIIs using faker library. Below table shows the custom PIIs which demonstrate in this tutorial:
 
+|Custom PIIs|
+|-----------|
+|Name|
+|Social Security Number|
+|Credit Card Number|
+|Employee ID|
+|Education Details|
+|Salary|
+|Driving Licence Number|
 

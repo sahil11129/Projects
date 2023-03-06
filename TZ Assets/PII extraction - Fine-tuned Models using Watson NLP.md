@@ -128,6 +128,6 @@ Fine-tuning a Sire model for PII extraction involves training the model on a lab
 
 In the above Fine-tuning, `train_iob_stream` is the training data that generate at beginning of the tutorial which includes 10,000 sentences, `en` is the language code for English, and `mentions_train_template` is the SIRE model entity mention template which we load in the beginning 
 
-
+![Sire-Workflow](Screenshots/Sire_workflow.png)
 
 now save the model with Syntax model as workflow model so we can directly test on the input text.

@@ -139,3 +139,7 @@ Now let's run the trained models with testing data, Here testing data is a sente
 ![Sire-Result](Screenshots/Sire_Result.png)
 
 As per the above result, fine-tuned SIRE model can identify all trained custom PII entities as `SocialSecurityNumber`, `CreditCardNumber`, `Name`, `employee_id`, `degree_level`, `filed_of_study` and,`salary`.
+
+## Conclusion 
+
+The purpose of this tutorial is to demonstrate the practical process of fine-tuning a Watson NLP model using custom entities, with a focus on achieving high accuracy. Through the use of a notebook, the step-by-step process of fine-tuning will be presented in detail, with testing results showing that organizations can fine-tune their required custom PIIs with good accuracy.

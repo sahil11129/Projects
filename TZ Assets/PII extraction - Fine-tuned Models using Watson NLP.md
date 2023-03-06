@@ -137,3 +137,5 @@ now save the model with Syntax model as workflow model so we can directly test o
 Now let's run the trained models with testing data, Here testing data is a sentence from test data which we generate before. 
 
 ![Sire-Result](Screenshots/Sire_Result.png)
+
+As per the above result, fine-tuned Sire model can identify all trained custom PII entities as SocialSecurityNumber, CreditCardNumber, Name, employee_id, degree_level, filed_of_study and,salary.

@@ -26,7 +26,7 @@ It should take you approximately 1 hour to complete this tutorial.
 
 # Steps
 
-The tutorial demonstrates the extraction of PII using pre-trained Watson NLP models. Second, we generate training data for custom PII entities. In this section, we focus on PII extraction models for the following PII entities: 
+The tutorial demonstrates the extraction of PII using pre-trained Watson NLP models. In this section, we focus on PII extraction models for the following PII entities: 
 
 |Pre-trained models |Fine-tuned models|
 |-------------------|-----------------|

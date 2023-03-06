@@ -124,4 +124,4 @@ As per the above result, fine-tuned BiLSTM model can identify all trained custom
 
 Fine-tuning a Sire model for PII extraction involves training the model on a labeled training dataset includes examples of PII entities.
 
-
+![Sire-Model](Screenshots/Sire_Model.png)

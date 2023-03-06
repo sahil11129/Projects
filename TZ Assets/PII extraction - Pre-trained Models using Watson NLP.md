@@ -82,7 +82,7 @@ rbr_model = watson_nlp.load(watson_nlp.download('entity-mentions_rbr_multi_pii')
 sire = watson_nlp.load(watson_nlp.download('entity-mentions_sire_en_stock-wf'))
 ```
 
-## Step 2.2 Run the models for PII Extraction 
+## Step 2.2 Run the Pre-Trained models for PII Extraction 
 
 * BiLSTM Pretrained
 

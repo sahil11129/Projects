@@ -68,7 +68,7 @@ Now, we can run this function 10,000 times to generate 10,000 labeled training s
 
 ![Data-JSON](Screenshots/Data-Json.png)
 
-## Step 2. Fine-Tune the Model for PII Extraction
+## Step 2. Fine-Tune BiLSTM Model for PII Extraction
 
 
 Watson NLP offers fine-tune functionality for custom training. The process of identifying and PII entities from text can be accomplished using two different types of models:
@@ -95,7 +95,7 @@ mentions_train_template = watson_nlp.load(watson_nlp.download('file_path_entity-
 default_feature_extractor = watson_nlp.load(watson_nlp.download('feature-extractor_rbr_entity-mentions_sire_en_stock'))
 ```
 
-## Step 2.2 Fine-Tuning BiLSTM models
+## Step 2.2 Fine-Tuning the models
 
 Fine-tuning a BiLSTM model for PII extraction involves training the model on a labeled training dataset includes examples of PII entities.
 

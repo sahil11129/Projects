@@ -68,7 +68,7 @@ Now, we can run this function 10,000 times to generate 10,000 labeled training s
 
 ![Data-JSON](Screenshots/Data-Json.png)
 
-## Step 2. Fine-Tune the Model for PII Extraction
+## Step 2. Fine-Tune BiLSTM Model for PII Extraction
 
 
 Watson NLP offers fine-tune functionality for custom training. The process of identifying and PII entities from text can be accomplished using two different types of models:
@@ -107,8 +107,11 @@ In the above Fine-tuning, `train_iob_stream` is the training data that generate 
 
 now save the model with Syntax model as workflow model so we can directly test on the input text.
 
-2.3 Test the Fine-Tuned Model
+## 2.3 Test the Fine-Tuned Model
 
 Now let's run the trained models with testing data, Here testing data is a sentence from test data which we generate before. We can fetch single sentences : `text = pd.read_json('faker_PII_text_test.json')['text'][1]` 
 
 
+![BiLSTM-Result](Screenshots/Bilstm_result.png)
+
+As per the above result, fine-tuned BiLSTM model can identify all trained custom PII entities as `SocialSecurityNumber`, `CreditCardNumber`, `Name`, `employee_id`, `degree_level`, `filed_of_study` and,`salary`.

@@ -62,3 +62,4 @@ Here is a demonstration of how to generate custom Personally Identifiable Inform
 
 Now that we have the sentence that we can use for fine-tuning the model, we need to label the Personally Identifiable Information (PII) entities within the sentence. This labeling process will enable the model to recognize the PII entities and assign the appropriate labels to them. To achieve this, we can pass the exact index locations of all the PII entities, along with their corresponding labels, as shown below.
 
+![Data-Labled](Screenshots/Data-Labled.png)

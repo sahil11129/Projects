@@ -100,3 +100,5 @@ Step 2.2 Fine-Tuning the models
 Fine-tuning a BiLSTM model for PII extraction involves training the model on a labeled training dataset includes examples of PII entities.
 
 ![Bilstm-Finetuned](Screenshots/Bilstm-finetuned.png)
+
+In the above Fine-tuning, `train_iob_stream` is the training data that generate at beginning of the tutorial which includes 10,000 sentences, `dev_iob_stream` is the testing data of 1000 sentences, and `glove_model.embedding` is glove embedding which describes in the above section

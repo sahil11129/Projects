@@ -99,4 +99,4 @@ Step 2.2 Fine-Tuning the models
 
 Fine-tuning a BiLSTM model for PII extraction involves training the model on a labeled training dataset includes examples of PII entities.
 
-
+![Bilstm-Finetuned](Screenshots/Bilstm-finetuned.png)

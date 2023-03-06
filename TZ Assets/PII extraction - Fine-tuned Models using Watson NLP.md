@@ -56,7 +56,7 @@ The tutorial consists of two part. First, it demonstrates the extraction of PII 
 |Salary|
 |Driving Licence Number|
 
-Here is a demonstration of how to generate custom Personally Identifiable Information (PII) using Faker, which is a function for generating data. The generated custom PIIs can be utilized to create a sentence that includes all the relevant information. This sentence can then be used to fine-tune the model. The image below shows the data generation process.
+Here is a demonstration of how to generate custom Personally Identifiable Information (PII) using Faker, which is a function for generating data. The generated custom PIIs can be utilized to create a sentence that includes all the relevant information. This sentence can then be used to fine-tune the model. The image below shows the data generation process for custom PIIs.
 
 ![Custom-Data_generation](Screenshots/Custom-Data-Generation.png)
 

@@ -135,3 +135,5 @@ now save the model with Syntax model as workflow model so we can directly test o
 ## 3.1 Test the Fine-Tuned Model
 
 Now let's run the trained models with testing data, Here testing data is a sentence from test data which we generate before. 
+
+![Sire-Result](Screenshots/Sire_Result.png)

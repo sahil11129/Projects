@@ -18,7 +18,6 @@ To follow the steps in this tutorial, you need:
 * An [IBMid](https://cloud.ibm.com/login?cm_sp=ibmdev-_-developer-tutorials-_-cloudreg)
 * A Watson Studio project
 * A Python [Pre-Trained Models notebook](https://github.com/ibm-build-lab/Watson-NLP/blob/main/ML/PII-Extraction/PII%20Extraction%20-%20Pre-Trained%20Models.ipynb)
-* A Python [Fine-Tuned Models notebook](https://github.com/ibm-build-lab/Watson-NLP/blob/main/ML/PII-Extraction/PII%20Extraction%20-%20Fine-Tuned%20Models.ipynb)
 * Your [environment set up](https://developer.ibm.com/tutorials/set-up-your-ibm-watson-libraries-environment/)
 
 # Estimated time

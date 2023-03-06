@@ -142,4 +142,4 @@ As per the above result, fine-tuned SIRE model can identify all trained custom P
 
 ## Conclusion 
 
-The purpose of this tutorial is to demonstrate the practical process of fine-tuning a Watson NLP model using custom entities, with a focus on achieving high accuracy. Through the use of a notebook, the step-by-step process of fine-tuning will be presented in detail, with testing results showing that organizations can fine-tune their required custom PIIs with good accuracy.
+The purpose of this tutorial is to demonstrate the practical process of fine-tuning a Watson NLP model using custom entities, with a focus on achieving high accuracy. Through the use of a [Notebook](https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/922271a1-f9d7-45d1-a2ae-e5da6377c598?projectid=ae1a755d-e162-4f07-9f5a-130d2280e78e&context=cpdaas), the step-by-step process of fine-tuning will be presented in detail, with testing results showing that organizations can fine-tune their required custom PIIs with good accuracy.

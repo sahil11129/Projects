@@ -95,7 +95,7 @@ mentions_train_template = watson_nlp.load(watson_nlp.download('file_path_entity-
 default_feature_extractor = watson_nlp.load(watson_nlp.download('feature-extractor_rbr_entity-mentions_sire_en_stock'))
 ```
 
-Step 2.2 Fine-Tuning the models
+## Step 2.2 Fine-Tuning the models
 
 Fine-tuning a BiLSTM model for PII extraction involves training the model on a labeled training dataset includes examples of PII entities.
 
@@ -106,5 +106,7 @@ In the above Fine-tuning, `train_iob_stream` is the training data that generate 
 ![workflow](Screenshots/workflow.png)
 
 now save the model with Syntax model as workflow model so we can directly test on the input text.
+
+2.3 Test the Fine-Tuned Model
 
 

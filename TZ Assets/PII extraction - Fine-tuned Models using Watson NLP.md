@@ -66,3 +66,4 @@ Now that we have the sentence that we can use for fine-tuning the model, we need
 
 Now, we can run this function 10,000 times to generate 10,000 labeled training sentences with PII entities, and store the resulting data in a JSON format. This will enable us to utilize the training data whenever it's required.
 
+![Data-JSON](Screenshots/Data-Json.png)

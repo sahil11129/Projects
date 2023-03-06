@@ -113,3 +113,5 @@ Now let's run the trained models with testing data, Here testing data is a sente
 
 
 ![BiLSTM-Result](Screenshots/Bilstm_result.png)
+
+As per the above result, fine-tuned BiLSTM model can identify all trained custom PII entities as `SocialSecurityNumber`, `CreditCardNumber`, `Name`, `employee_id`, `degree_level`, `filed_of_study` and,`salary`.

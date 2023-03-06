@@ -64,7 +64,7 @@ Now that we have the sentence that we can use for fine-tuning the model, we need
 
 ![Data-Labled](Screenshots/Data-Labled.png)
 
-Now, we can run this function 10,000 times to generate 10,000 labeled training sentences with PII entities, and store the resulting data in a JSON format. This will enable us to utilize the training data whenever it's required.
+Now, we can run this function 10,000 times to generate 10,000 labeled training sentences with PII entities and 1000 for labeled testing sentences, and store the resulting data in a JSON format. This will enable us to utilize the training data whenever it's required.
 
 ![Data-JSON](Screenshots/Data-Json.png)
 
@@ -76,3 +76,23 @@ Watson NLP offers fine-tune functionality for custom training. The process of id
 * BILSTM: the BiLSTM network would take the preprocessed text as input and learn to identify patterns and relationships between words that are indicative of PII data. The BiLSTM network would then output a probability score for each word in the text, indicating the likelihood that the word is part of a PII entity. The BiLSTM network may also be trained to recognize specific entities such as names, addresses, phone numbers, email addresses, etc.
 
 * SIRE: Statistical Information and Relation Extraction (SIRE) is a technique used in natural language processing (NLP) to extract specific information and relationships from text. It involves using machine learning algorithms to identify and extract structured data such as entities, attributes, and relations from unstructured text. SIRE is used in a variety of applications, including information extraction, knowledge graph construction, and question answering. SIRE typically uses supervised learning approach, where a model is trained using annotated examples of text and the corresponding structured data. The model can then be used to extract the same information from new, unseen text.
+
+
+## Step 2.1 PII extraction function
+
+Both the model are trained from labeled data, which require the syntax block to be executed first to generate the expected input for the entity-mention block. BiLSTM model requires Glove embedding for fine tuning. It allows for words to be represented as dense vectors in a high-dimensional space, where the distance between vectors reflects the semantic similarity between the corresponding words. We can use GloVe embedding to generate vector representations of the words in our data, which can then be utilized for further analysis or modeling." is a popular method for generating vector representations of words in natural language processing. It allows for words to be represented as dense vectors in a high-dimensional space, where the distance between vectors reflects the semantic similarity between the corresponding words. We can use GloVe embedding to generate vector representations of the words in our data, which can then be utilized for further analysis or modeling."
+
+```
+# Load a syntax model to split the text into sentences and tokens
+syntax_model = watson_nlp.load(watson_nlp.download('syntax_izumo_en_stock'))
+# Load bilstm model in WatsonNLP
+bilstm_model = watson_nlp.load(watson_nlp.download('entity-mentions_bilstm_en_pii'))
+# Download the GloVe model to be used as embeddings in the BiLSTM
+glove_model = watson_nlp.load(watson_nlp.download('embedding_glove_en_stock'))
+# Download the algorithm template
+mentions_train_template = watson_nlp.load(watson_nlp.download('file_path_entity-mentions_sire_multi_template-crf'))
+# Download the feature extractor
+default_feature_extractor = watson_nlp.load(watson_nlp.download('feature-extractor_rbr_entity-mentions_sire_en_stock'))
+```
+
+

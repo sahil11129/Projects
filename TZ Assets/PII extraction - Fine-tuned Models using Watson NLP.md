@@ -9,7 +9,7 @@ The `watson_nlp` library is available on IBM Watson Studio as a runtime library 
 
 ![WS-flow](Screenshots/watson-studio-flow.png)
 
-This tutorial provides an introduction to IBM Watson NLP, covering the fundamental concepts and guiding you through the process of using <b>pre-trained models</b> and <b>fine-tuning</b> them for PII extraction.
+This tutorial provides an introduction to IBM Watson NLP, covering the fundamental concepts and guiding you through the process of using <b>fine-tuning</b> them for PII extraction.
 
 # Prerequisites
 

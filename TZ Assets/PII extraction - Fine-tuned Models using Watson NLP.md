@@ -41,7 +41,7 @@ The tutorial consists of two part. First, it demonstrates the extraction of PII 
 # Pre-Trained Watson NLP Models
 
 
-## Step 1. Generate the testing data
+## Step 1. Generate the data for custom PII 
 
 
 1. Generate the sample data set for Name, credit card number and social security number using faker library.

@@ -38,7 +38,7 @@ The tutorial consists of two part. First, it demonstrates the extraction of PII 
 
 
 
-# Fine-Tune Watson NLP Models
+# Fine-Tune Watson NLP Models for custom PIIs
 
 
 ## Step 1. Generate the data for custom PII 
@@ -95,4 +95,4 @@ mentions_train_template = watson_nlp.load(watson_nlp.download('file_path_entity-
 default_feature_extractor = watson_nlp.load(watson_nlp.download('feature-extractor_rbr_entity-mentions_sire_en_stock'))
 ```
 
-
+Step 2.2 Fine-Tune models for PII Extraction

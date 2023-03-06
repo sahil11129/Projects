@@ -38,7 +38,7 @@ The tutorial consists of two part. First, it demonstrates the extraction of PII 
 
 
 
-# Pre-Trained Watson NLP Models
+# Fine-Tune Watson NLP Models
 
 
 ## Step 1. Generate the data for custom PII 

@@ -71,11 +71,10 @@ Now, we can run this function 10,000 times to generate 10,000 labeled training s
 ## Step 2. Fine-Tune BiLSTM Model for PII Extraction
 
 
-Watson NLP offers fine-tune functionality for custom training. The process of identifying and PII entities from text can be accomplished using two different types of models:
+The Watson NLP platform provides a fine-tune feature that allows for custom training. This enables the identification of personally identifiable information (PII) entities from text using two distinct models: the BiLSTM model and the Sire model.
+
 
 * BILSTM: the BiLSTM network would take the preprocessed text as input and learn to identify patterns and relationships between words that are indicative of PII data. The BiLSTM network would then output a probability score for each word in the text, indicating the likelihood that the word is part of a PII entity. The BiLSTM network may also be trained to recognize specific entities such as names, addresses, phone numbers, email addresses, etc.
-
-* SIRE: Statistical Information and Relation Extraction (SIRE) is a technique used in natural language processing (NLP) to extract specific information and relationships from text. It involves using machine learning algorithms to identify and extract structured data such as entities, attributes, and relations from unstructured text. SIRE is used in a variety of applications, including information extraction, knowledge graph construction, and question answering. SIRE typically uses supervised learning approach, where a model is trained using annotated examples of text and the corresponding structured data. The model can then be used to extract the same information from new, unseen text.
 
 
 ## Step 2.1 PII extraction function
@@ -115,3 +114,14 @@ Now let's run the trained models with testing data, Here testing data is a sente
 ![BiLSTM-Result](Screenshots/Bilstm_result.png)
 
 As per the above result, fine-tuned BiLSTM model can identify all trained custom PII entities as `SocialSecurityNumber`, `CreditCardNumber`, `Name`, `employee_id`, `degree_level`, `filed_of_study` and,`salary`.
+
+
+## Step 3. Fine-Tune SIRE Model for PII Extraction
+
+* SIRE: Statistical Information and Relation Extraction (SIRE) is a technique used in natural language processing (NLP) to extract specific information and relationships from text. It involves using machine learning algorithms to identify and extract structured data such as entities, attributes, and relations from unstructured text. SIRE is used in a variety of applications, including information extraction, knowledge graph construction, and question answering. SIRE typically uses supervised learning approach, where a model is trained using annotated examples of text and the corresponding structured data. The model can then be used to extract the same information from new, unseen text.
+
+## 3.1 Fine-Tuning the models
+
+Fine-tuning a Sire model for PII extraction involves training the model on a labeled training dataset includes examples of PII entities.
+
+

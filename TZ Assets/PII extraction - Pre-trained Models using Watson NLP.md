@@ -42,14 +42,8 @@ The tutorial demonstrates the extraction of PII using pre-trained Watson NLP mod
 
 ## Step 1. Generate the testing data
 
-### Step 1.1 Set Project token
-Before you can begin working on notebook in Watson Studio in Cloud Pak for Data as a Service, you need to ensure that the project token is set so that you can access the project assets via the notebook.
 
-When this notebook is added to the project, a project access token should be inserted at the top of the notebook in a code cell. If you do not see the cell above, add the token to the notebook by clicking **More > Insert project token** from the notebook action bar. By running the inserted hidden code cell, a project object is created that you can use to access project resources.
-
-![ws-project.mov](https://media.giphy.com/media/jSVxX2spqwWF9unYrs/giphy.gif)
-
-### Step 1.2 Generate the sample data set for Name, credit card number and social security number using faker library.
+### Generate the sample data set for Name, credit card number and social security number using faker library.
 
 
 ```

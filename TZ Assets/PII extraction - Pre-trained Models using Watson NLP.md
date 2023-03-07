@@ -47,7 +47,37 @@ The tutorial demonstrates the extraction of PII using pre-trained Watson NLP mod
 1. Generate the sample data set for Name, credit card number and social security number using faker library.
 
 
-![Data-Gen](Screenshots/Data%20Generation%20faker.png)
+```
+fake = Faker(locale='en_US')
+
+def format_data():  
+        #Generate a random
+        name = fake.name() 
+
+        #Generate a random SSN 
+        ssn = fake.ssn()
+
+        #Generate a random CCN 
+        ccn = fake.credit_card_number()
+
+        text_1 = """My name is %s, and my social security number is %s. Here's the number to my Visa credit card is %s""" % (name, ssn, ccn)
+
+        text_2 = """%s is my social security number. The name on my credit card %s is %s."""% (ssn, ccn, name)
+
+        text_3 = """My credit card number is %s and social security number is %s, I am %s""" %(ccn,ssn,name)
+
+
+        text = random.choice([text_1, text_2,text_3])
+        
+        return text
+```
+
+```
+text = format_data()
+print(text)
+
+'My credit card number is 4084897820169892970 and social security number is 178-32-7893, I am Theresa Bowen'
+```
 
 ## Step 2. PII Extraction 
 

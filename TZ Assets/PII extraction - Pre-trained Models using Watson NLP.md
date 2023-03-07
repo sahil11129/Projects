@@ -7,7 +7,7 @@ PII extraction is a crucial process in maintaining data privacy compliance while
 
 The `watson_nlp` library is available on IBM Watson Studio as a runtime library so that you can directly use it for model training, evaluation, and prediction. The following figure shows the Watson NLP architecture.
 
-![WS-flow](Screenshots/watson-studio-flow.png)
+![WS-flow](Screenshots/watson-studio-flow%201.03.17%20PM.png)
 
 This tutorial provides an introduction to IBM Watson NLP, covering the fundamental concepts and guiding you through the process of using <b>pre-trained models</b> for PII extraction.
 

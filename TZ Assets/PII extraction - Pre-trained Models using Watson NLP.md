@@ -9,7 +9,7 @@ The `watson_nlp` library is available on IBM Watson Studio as a runtime library 
 
 ![WS-flow](Screenshots/watson-studio-flow.png)
 
-This tutorial provides an introduction to IBM Watson NLP, covering the fundamental concepts and guiding you through the process of using <b>pre-trained models</b> and <b>fine-tuning</b> them for PII extraction.
+This tutorial provides an introduction to IBM Watson NLP, covering the fundamental concepts and guiding you through the process of using <b>pre-trained models</b> for PII extraction.
 
 # Prerequisites
 
@@ -26,7 +26,7 @@ It should take you approximately 1 hour to complete this tutorial.
 
 # Steps
 
-The tutorial consists of two part. First, it demonstrates the extraction of PII using pre-trained Watson NLP models. Second, we generate training data for custom PII entities and fine-tune the models. In this section, we focus on PII extraction models for the following PII entities: 
+The tutorial demonstrates the extraction of PII using pre-trained Watson NLP models. In this section, we focus on PII extraction models for the following PII entities: 
 
 |Pre-trained models |Fine-tuned models|
 |-------------------|-----------------|
@@ -37,17 +37,52 @@ The tutorial consists of two part. First, it demonstrates the extraction of PII 
 |URL|Gender|
 
 
-
 # Pre-Trained Watson NLP Models
 
 
 ## Step 1. Generate the testing data
 
+### Step 1.1 Set Project token
+Before you can begin working on notebook in Watson Studio in Cloud Pak for Data as a Service, you need to ensure that the project token is set so that you can access the project assets via the notebook.
 
-1. Generate the sample data set for Name, credit card number and social security number using faker library.
+When this notebook is added to the project, a project access token should be inserted at the top of the notebook in a code cell. If you do not see the cell above, add the token to the notebook by clicking **More > Insert project token** from the notebook action bar. By running the inserted hidden code cell, a project object is created that you can use to access project resources.
+
+![ws-project.mov](https://media.giphy.com/media/jSVxX2spqwWF9unYrs/giphy.gif)
+
+### Step 1.2 Generate the sample data set for Name, credit card number and social security number using faker library.
 
 
-![Data-Gen](Screenshots/Data%20Generation%20faker.png)
+```
+fake = Faker(locale='en_US')
+
+def format_data():  
+        #Generate a random
+        name = fake.name() 
+
+        #Generate a random SSN 
+        ssn = fake.ssn()
+
+        #Generate a random CCN 
+        ccn = fake.credit_card_number()
+
+        text_1 = """My name is %s, and my social security number is %s. Here's the number to my Visa credit card is %s""" % (name, ssn, ccn)
+
+        text_2 = """%s is my social security number. The name on my credit card %s is %s."""% (ssn, ccn, name)
+
+        text_3 = """My credit card number is %s and social security number is %s, I am %s""" %(ccn,ssn,name)
+
+
+        text = random.choice([text_1, text_2,text_3])
+        
+        return text
+```
+
+```
+text = format_data()
+print(text)
+
+'My credit card number is 4084897820169892970 and social security number is 178-32-7893, I am Theresa Bowen'
+```
 
 ## Step 2. PII Extraction 
 

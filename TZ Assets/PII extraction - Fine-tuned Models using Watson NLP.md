@@ -58,15 +58,148 @@ The tutorial demonstrates the extraction of PII using generated training data fo
 
 Here is a demonstration of how to generate custom Personally Identifiable Information (PII) using Faker, which is a function for generating data. The generated custom PIIs can be utilized to create a sentence that includes all the relevant information. This sentence can then be used to fine-tune the model. The image below shows the data generation process for custom PIIs.
 
-![Custom-Data_generation](Screenshots/Custom-Data-Generation.png)
+```
+def format_data():  
+        #Generate a random
+        name = fake.name() 
+
+        #Generate a random SSN 
+        ssn = fake.ssn()
+
+        #Generate a random CCN 
+        ccn = fake.credit_card_number()
+
+        # Generate a random degree level
+        degree_level = fake.random_element(elements=('Bachelor\'s', 'Master\'s', 'Doctorate'))
+
+        # Generate a random field of study
+        field_of_study = fake.random_element(elements=('Computer Science', 'Engineering', 'Business', 'Psychology','Medical'))
+
+        # Generate a random prefix with 1-2 alphabets
+        prefix = ''.join(random.choices(string.ascii_uppercase, k=random.randint(1, 2)))
+        # Generate a random employee ID with the prefix and a random integer
+        employee_id = f"{prefix}{fake.random_int(min=10000, max=99999):05d}"
+
+        # Generate salary using faker
+        salary = str(fake.pyfloat(left_digits=5, right_digits=2, positive=True, min_value=1000, max_value=5000))
+
+
+        text_1 = """My name is %s, and my social security number is %s. Here's the number to my Visa credit card, 
+        %s. I studied %s in %s, My employee id is %s and salary is %s""" % (name, ssn, ccn,degree_level,field_of_study,employee_id,salary)
+
+        text_2 = """%s is my social security number. The name on my credit card %s is %s. 
+        My employee id is %s and I done my %s in %s, I am earning %s per month""" % (ssn, ccn, name,employee_id,degree_level, field_of_study,salary)
+
+        text_3 = """My monthly Earning is %s and employee code is %s, I studied %s in %s. 
+        My credit card number is %s and social security number is %s, I am %s""" %(salary,employee_id,degree_level,field_of_study,ccn,ssn,name)
+
+
+        text = random.choice([text_1, text_2,text_3])
+ ```
 
 Now that we have the sentence that we can use for fine-tuning the model, we need to label the Personally Identifiable Information (PII) entities within the sentence. This labeling process will enable the model to recognize the PII entities and assign the appropriate labels to them. To achieve this, we can pass the exact index locations of all the PII entities, along with their corresponding labels, as shown below.
 
-![Data-Labled](Screenshots/Data-Labled.png)
+
+
+```
+
+        name_begin = text.find(name)
+        name_end = text.find(name) + len(name)
+
+        ssn_begin = text.find(ssn)
+        ssn_end = text.find(ssn) + len(ssn)
+
+        ccn_begin = text.find(ccn)
+        ccn_end = text.find(ccn) + len(ccn)
+
+        field_of_study_begin = text.find(field_of_study)
+        field_of_study_end = field_of_study_begin + len(field_of_study)
+
+        degree_level_begin = text.find(degree_level)
+        degree_level_end = degree_level_begin + len(degree_level)
+
+        employee_id_begin = text.find(employee_id)
+        employee_id_end = employee_id_begin + len(employee_id)
+
+        salary_begin = text.find(salary)
+        salary_end = salary_begin + len(salary)
+
+        data = {
+                    "text": text,
+                    "mentions": [
+                        {
+                            "location": {
+                                "begin": field_of_study_begin,
+                                "end": field_of_study_end
+                            },
+                            "text": field_of_study,
+                            "type": "field_of_study"
+                        },
+                        {
+                            "location": {
+                                "begin": degree_level_begin,
+                                "end": degree_level_end
+                            },
+                            "text": degree_level,
+                            "type": "degree_level"
+                        },
+                        {
+                            "location": {
+                                "begin": employee_id_begin,
+                                "end": employee_id_end
+                            },
+                            "text": employee_id,
+                            "type": "employee_id"
+                        },
+                        {
+                            "location": {
+                                "begin": salary_begin,
+                                "end": salary_end
+                            },
+                            "text": salary,
+                            "type": "salary"
+                        },
+                        {
+                            "location": {
+                                "begin": name_begin,
+                                "end": name_end
+                            },
+                            "text": name,
+                            "type": "Name"
+                        },
+                        {
+                            "location": {
+                                "begin": ssn_begin,
+                                "end": ssn_end
+                            },
+                            "text": ssn,
+                            "type": "SocialSecurityNumber"
+                        },
+                        {
+                            "location": {
+                                "begin": ccn_begin,
+                                "end": ccn_end
+                            },
+                            "text": ccn,
+                            "type": "CreditCardNumber"
+                        }
+                        ]   
+                    }
+        return data
+```
 
 Now, we can run this function 10,000 times to generate 10,000 labeled training sentences with PII entities and 1000 for labeled testing sentences, and store the resulting data in a JSON format. This will enable us to utilize the training data whenever it's required.
 
-![Data-JSON](Screenshots/Data-Json.png)
+```
+#Prepared and store Training dataset for Custom PII entities 
+train_list_faker = []
+for i in range(0, 10000):
+    train_list_faker.append(format_data())
+
+with open('faker_PII_text_train.json', 'w') as f:
+    json.dump(train_list_faker, f)
+project.save_data('faker_PII_text_train.json', data=json.dumps(train_list_faker), overwrite=True)
+```
 
 ## Step 2. Fine-Tune BiLSTM Model for PII Extraction
 
@@ -98,12 +231,28 @@ default_feature_extractor = watson_nlp.load(watson_nlp.download('feature-extract
 
 Fine-tuning a BiLSTM model for PII extraction involves training the model on a labeled training dataset includes examples of PII entities.
 
-![Bilstm-Finetuned](Screenshots/Bilstm-finetuned.png)
+```
+#Fine-Tune BiLSTM model using Custom PII
+bilstm_custom = bilstm_model.train(train_iob_stream, 
+                                   dev_iob_stream, 
+                                   embedding=glove_model.embedding,
+                                   num_train_epochs=5,
+                                   num_conf_epochs=5, 
+                                   checkpoint_interval=5, 
+                                   learning_rate=0.005,
+                                   lstm_size=16)
+```
 
 In the above Fine-tuning, `train_iob_stream` is the training data that generate at beginning of the tutorial which includes 10,000 sentences, `dev_iob_stream` is the testing data of 1000 sentences, and `glove_model.embedding` is glove embedding which describes in the above section.
 
-![workflow](Screenshots/workflow.png)
+```
+#Save the Trained block model as a workflow model 
+from watson_nlp.workflows.entity_mentions.bilstm import BiLSTM 
 
+mentions_workflow = BiLSTM(syntax_model, bilstm_custom)
+
+project.save_data('bilstm_pii_workflow_custom', data=mentions_workflow.as_file_like_object(), overwrite=True)
+```
 now save the model with Syntax model as workflow model so we can directly test on the input text.
 
 ## 2.3 Test the Fine-Tuned Model
@@ -124,11 +273,24 @@ As per the above result, fine-tuned BiLSTM model can identify all trained custom
 
 Fine-tuning a Sire model for PII extraction involves training the model on a labeled training dataset includes examples of PII entities.
 
-![Sire-Model](Screenshots/Sire_Model.png)
+```
+#Fine-Tune SIRE using custom PII
+sire_custom = watson_nlp.blocks.entity_mentions.SIRE.train(train_iob_stream, 
+                                                           'en', 
+                                                           mentions_train_template,
+                                                           feature_extractors=[default_feature_extractor])
+```
 
 In the above Fine-tuning, `train_iob_stream` is the training data that generate at beginning of the tutorial which includes 10,000 sentences, `en` is the language code for English, and `mentions_train_template` is the SIRE model entity mention template which we load in the beginning 
 
-![Sire-Workflow](Screenshots/Sire_workflow.png)
+```
+#Save the Trained block model as a workflow model 
+from watson_nlp.workflows.entity_mentions.sire import SIRE
+
+sire_workflow = SIRE("en",syntax_model,sire_custom)
+
+project.save_data('sire_pii_workflow_custom', data=sire_workflow.as_file_like_object(), overwrite=True)
+```
 
 now save the model with Syntax model as workflow model so we can directly test on the input text.
 

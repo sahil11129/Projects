@@ -173,6 +173,9 @@ dev_iob_stream = prepare_train_from_json(dev_data, syntax_model)
 
 ## Step 2. Fine-Tune SIRE Model for Entity Extraction
 
+
+* SIRE: Statistical Information and Relation Extraction (SIRE) is a technique used in natural language processing (NLP) to extract specific information and relationships from text. It involves using machine learning algorithms to identify and extract structured data such as entities, attributes, and relations from unstructured text. SIRE is used in a variety of applications, including information extraction, knowledge graph construction, and question answering. SIRE typically uses supervised learning approach, where a model is trained using annotated examples of text and the corresponding structured data. The model can then be used to extract the same information from new, unseen text.
+
 ## Step 2.1 Entity extraction function
 
 Both the model are trained from labeled data, which require the syntax block to be executed first to generate the expected input for the entity-mention block. BiLSTM model requires Glove embedding for fine tuning. It allows for words to be represented as dense vectors in a high-dimensional space, where the distance between vectors reflects the semantic similarity between the corresponding words. We can use GloVe embedding to generate vector representations of the words in our data, which can then be utilized for further analysis or modeling." is a popular method for generating vector representations of words in natural language processing. It allows for words to be represented as dense vectors in a high-dimensional space, where the distance between vectors reflects the semantic similarity between the corresponding words. We can use GloVe embedding to generate vector representations of the words in our data, which can then be utilized for further analysis or modeling."
@@ -189,7 +192,6 @@ glove_model = watson_nlp.load(watson_nlp.download('embedding_glove_en_stock'))
 
 ```
 
-* SIRE: Statistical Information and Relation Extraction (SIRE) is a technique used in natural language processing (NLP) to extract specific information and relationships from text. It involves using machine learning algorithms to identify and extract structured data such as entities, attributes, and relations from unstructured text. SIRE is used in a variety of applications, including information extraction, knowledge graph construction, and question answering. SIRE typically uses supervised learning approach, where a model is trained using annotated examples of text and the corresponding structured data. The model can then be used to extract the same information from new, unseen text.
 
 ## 2.2 Fine-Tuning the models
 

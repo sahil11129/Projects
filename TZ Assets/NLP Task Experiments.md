@@ -276,7 +276,7 @@ import openai
 
 
 ```python
-openai.api_key = "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"
+openai.api_key = "key"
 
 ```
 

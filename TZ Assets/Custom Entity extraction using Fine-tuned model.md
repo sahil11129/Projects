@@ -9,7 +9,7 @@ The `watson_nlp` library is available on IBM Watson Studio as a runtime library 
 
 ![WS-flow](Screenshots/watson-studio-flow%201.03.17%20PM.png)
 
-This tutorial provides an introduction to IBM Watson NLP, covering the fundamental concepts and guiding you through the process of using <b>fine-tuning</b> them for Entity extraction.
+This tutorial provides an introduction to IBM Watson NLP, covering the fundamental concepts and guiding you through the process of using <b>fine-tuning</b> them for Entity Extraction.
 
 # Prerequisites
 
@@ -158,8 +158,11 @@ for i in range(0, 1000):
 
 with open('custom_entity_test_data.json', 'w') as f:
     json.dump(test_list_faker, f)
+```
 
-#The text inputs will be converted into a streaming array where the text is broken down by the syntax model.
+The text inputs will be converted into a streaming array where the text is broken down by the syntax model.
+
+```
 train_data = dm.DataStream.from_json_array("custom_entity_train_data.json")
 train_iob_stream = prepare_train_from_json(train_data, syntax_model)
 dev_data = dm.DataStream.from_json_array("custom_entity_test_data.json")

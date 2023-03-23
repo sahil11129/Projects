@@ -210,7 +210,7 @@ sire_custom = watson_nlp.workflows.entity_mentions.SIRE.train(syntax_model=synta
                                                               num_workers=5)
 ```
 
-In the above Fine-tuning, labeled_entity_mentions : Path to a collection of labeled data (.json) or loaded DataStream of JSONs, which prepared above in Preparing Sample Data Set. /home/wsuser/work/ is home directory which includes `train_iob_stream` is the training data that generate at beginning of the tutorial which includes 30,000 sentences, `en` is the language code for English, and `mentions_train_template` is the SIRE model entity mention template which we load in the beginning 
+In the above Fine-tuning, `labeled_entity_mentions` is the path to a collection of labeled data (.json) or loaded DataStream of JSONs, which prepared above in Preparing Sample Data Set. `/home/wsuser/work/` is home directory which includes `train_iob_stream` is the training data that generate at beginning of the tutorial which includes 30,000 sentences, `en` is the language code for English, and `mentions_train_template` is the SIRE model entity mention template which we load in the beginning 
 
 ```
 #Save the Trained block model as a workflow model 

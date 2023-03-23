@@ -167,14 +167,8 @@ dev_iob_stream = prepare_train_from_json(dev_data, syntax_model)
 
 ```
 
-## Step 2. Fine-Tune BiLSTM Model for Entity Extraction
 
-
-The Watson NLP platform provides a fine-tune feature that allows for custom training. This enables the identification of Entity from text using two distinct models: the BiLSTM model and the Sire model.
-
-
-* BILSTM: the BiLSTM network would take the preprocessed text as input and learn to identify patterns and relationships between words that are indicative of Entity data. The BiLSTM network would then output a probability score for each word in the text, indicating the likelihood that the word is part of an entity. The BiLSTM network may also be trained to recognize specific entities such as names, location, duration, etc.
-
+## Step 2. Fine-Tune SIRE Model for Entity Extraction
 
 ## Step 2.1 Entity extraction function
 
@@ -192,7 +186,138 @@ glove_model = watson_nlp.load(watson_nlp.download('embedding_glove_en_stock'))
 
 ```
 
-## Step 2.2 Fine-Tuning the models
+* SIRE: Statistical Information and Relation Extraction (SIRE) is a technique used in natural language processing (NLP) to extract specific information and relationships from text. It involves using machine learning algorithms to identify and extract structured data such as entities, attributes, and relations from unstructured text. SIRE is used in a variety of applications, including information extraction, knowledge graph construction, and question answering. SIRE typically uses supervised learning approach, where a model is trained using annotated examples of text and the corresponding structured data. The model can then be used to extract the same information from new, unseen text.
+
+## 2.2 Fine-Tuning the models
+
+Fine-tuning a Sire model for Entity extraction involves training the model on a labeled training dataset includes examples of Entities.
+
+```
+# Train the model
+sire_custom = watson_nlp.workflows.entity_mentions.SIRE.train(syntax_model=syntax_model,
+                                                              labeled_entity_mentions='/home/wsuser/work/', 
+                                                              model_language='en', 
+                                                              template_resource=mentions_train_template, 
+                                                              feature_extractors=[default_feature_extractor], 
+                                                              l1=0.1, 
+                                                              l2=0.005, 
+                                                              num_epochs=50, 
+                                                              num_workers=5)
+```
+
+In the above Fine-tuning, labeled_entity_mentions : Path to a collection of labeled data (.json) or loaded DataStream of JSONs, which prepared above in Preparing Sample Data Set. /home/wsuser/work/ is home directory which includes `train_iob_stream` is the training data that generate at beginning of the tutorial which includes 30,000 sentences, `en` is the language code for English, and `mentions_train_template` is the SIRE model entity mention template which we load in the beginning 
+
+```
+#Save the Trained block model as a workflow model 
+from watson_nlp.workflows.entity_mentions.sire import SIRE
+
+sire_workflow = SIRE("en",syntax_model,sire_custom)
+
+project.save_data('sire_Entity_workflow_custom', data=sire_workflow.as_file_like_object(), overwrite=True)
+```
+
+now save the model with Syntax model as workflow model so we can directly test on the input text.
+
+## 2.3 Test the Fine-Tuned Model
+
+Now let's run the trained models with testing data, Here testing data is a sentence from test data which we generate before. 
+
+```
+# Run the model
+sire_result = sire_custom.run(text)
+print(sire_result)
+
+{
+  "mentions": [
+    {
+      "span": {
+        "begin": 3,
+        "end": 10,
+        "text": "Chinese"
+      },
+      "type": "nationality",
+      "producer_id": null,
+      "confidence": 0.9972540536035641,
+      "mention_type": "MENTT_UNSET",
+      "mention_class": "MENTC_UNSET",
+      "role": ""
+    },
+    {
+      "span": {
+        "begin": 31,
+        "end": 37,
+        "text": "Arabic"
+      },
+      "type": "language",
+      "producer_id": null,
+      "confidence": 0.9999835617867643,
+      "mention_type": "MENTT_UNSET",
+      "mention_class": "MENTC_UNSET",
+      "role": ""
+    },
+    {
+      "span": {
+        "begin": 57,
+        "end": 68,
+        "text": "fortnightly"
+      },
+      "type": "periodical_set",
+      "producer_id": null,
+      "confidence": 0.9999952747452828,
+      "mention_type": "MENTT_UNSET",
+      "mention_class": "MENTC_UNSET",
+      "role": ""
+    },
+    {
+      "span": {
+        "begin": 90,
+        "end": 102,
+        "text": "Columbus Day"
+      },
+      "type": "festival",
+      "producer_id": null,
+      "confidence": 0.9999672551278073,
+      "mention_type": "MENTT_UNSET",
+      "mention_class": "MENTC_UNSET",
+      "role": ""
+    },
+    {
+      "span": {
+        "begin": 108,
+        "end": 114,
+        "text": "Silver"
+      },
+      "type": "color",
+      "producer_id": null,
+      "confidence": 0.7077578736747369,
+      "mention_type": "MENTT_UNSET",
+      "mention_class": "MENTC_UNSET",
+      "role": ""
+    }
+  ],
+  "producer_id": {
+    "name": "Entity-Mentions SIRE Workflow",
+    "version": "0.0.1"
+  }
+}
+```
+
+As per the above result, fine-tuned SIRE model can identify all trained custom Entities as `nationality`, `language`, `festival`, `periodical_set` and `Colors`.
+
+
+
+## Step 3. Fine-Tune BiLSTM Model for Entity Extraction
+
+
+The Watson NLP platform provides a fine-tune feature that allows for custom training. This enables the identification of Entity from text using two distinct models: the BiLSTM model and the Sire model.
+
+
+* BILSTM: the BiLSTM network would take the preprocessed text as input and learn to identify patterns and relationships between words that are indicative of Entity data. The BiLSTM network would then output a probability score for each word in the text, indicating the likelihood that the word is part of an entity. The BiLSTM network may also be trained to recognize specific entities such as names, location, duration, etc.
+
+
+
+
+## Step 3.1 Fine-Tuning the models
 
 Fine-tuning a BiLSTM model for Entity extraction involves training the model on a labeled training dataset includes examples of Entities.
 
@@ -217,7 +342,7 @@ project.save_data('Entity_workflow_bilstm_custom', data=mentions_workflow.as_fil
 ```
 now save the model with Syntax model as workflow model so we can directly test on the input text.
 
-## 2.3 Test the Fine-Tuned Model
+## 3.2 Test the Fine-Tuned Model
 
 Now let's run the trained models with testing data, Here testing data is a sentence from test data which we generate before. We can fetch single sentences : `text = pd.read_json('custom_entity_test_data.json')['text'][0]` 
 
@@ -321,126 +446,6 @@ print(bilstm_result)
 
 As per the above result, fine-tuned BiLSTM model can identify all trained custom Entities as `nationality`, `language`, `festival`, `periodical_set` and `Colors`.
 
-
-## Step 3. Fine-Tune SIRE Model for Entity Extraction
-
-* SIRE: Statistical Information and Relation Extraction (SIRE) is a technique used in natural language processing (NLP) to extract specific information and relationships from text. It involves using machine learning algorithms to identify and extract structured data such as entities, attributes, and relations from unstructured text. SIRE is used in a variety of applications, including information extraction, knowledge graph construction, and question answering. SIRE typically uses supervised learning approach, where a model is trained using annotated examples of text and the corresponding structured data. The model can then be used to extract the same information from new, unseen text.
-
-## 3.1 Fine-Tuning the models
-
-Fine-tuning a Sire model for Entity extraction involves training the model on a labeled training dataset includes examples of Entities.
-
-```
-# Train the model
-sire_custom = watson_nlp.workflows.entity_mentions.SIRE.train(syntax_model=syntax_model,
-                                                              labeled_entity_mentions='/home/wsuser/work/', 
-                                                              model_language='en', 
-                                                              template_resource=mentions_train_template, 
-                                                              feature_extractors=[default_feature_extractor], 
-                                                              l1=0.1, 
-                                                              l2=0.005, 
-                                                              num_epochs=50, 
-                                                              num_workers=5)
-```
-
-In the above Fine-tuning, labeled_entity_mentions : Path to a collection of labeled data (.json) or loaded DataStream of JSONs, which prepared above in Preparing Sample Data Set. /home/wsuser/work/ is home directory which includes `train_iob_stream` is the training data that generate at beginning of the tutorial which includes 30,000 sentences, `en` is the language code for English, and `mentions_train_template` is the SIRE model entity mention template which we load in the beginning 
-
-```
-#Save the Trained block model as a workflow model 
-from watson_nlp.workflows.entity_mentions.sire import SIRE
-
-sire_workflow = SIRE("en",syntax_model,sire_custom)
-
-project.save_data('sire_Entity_workflow_custom', data=sire_workflow.as_file_like_object(), overwrite=True)
-```
-
-now save the model with Syntax model as workflow model so we can directly test on the input text.
-
-## 3.1 Test the Fine-Tuned Model
-
-Now let's run the trained models with testing data, Here testing data is a sentence from test data which we generate before. 
-
-```
-# Run the model
-sire_result = sire_custom.run(text)
-print(sire_result)
-
-{
-  "mentions": [
-    {
-      "span": {
-        "begin": 3,
-        "end": 10,
-        "text": "Chinese"
-      },
-      "type": "nationality",
-      "producer_id": null,
-      "confidence": 0.9972540536035641,
-      "mention_type": "MENTT_UNSET",
-      "mention_class": "MENTC_UNSET",
-      "role": ""
-    },
-    {
-      "span": {
-        "begin": 31,
-        "end": 37,
-        "text": "Arabic"
-      },
-      "type": "language",
-      "producer_id": null,
-      "confidence": 0.9999835617867643,
-      "mention_type": "MENTT_UNSET",
-      "mention_class": "MENTC_UNSET",
-      "role": ""
-    },
-    {
-      "span": {
-        "begin": 57,
-        "end": 68,
-        "text": "fortnightly"
-      },
-      "type": "periodical_set",
-      "producer_id": null,
-      "confidence": 0.9999952747452828,
-      "mention_type": "MENTT_UNSET",
-      "mention_class": "MENTC_UNSET",
-      "role": ""
-    },
-    {
-      "span": {
-        "begin": 90,
-        "end": 102,
-        "text": "Columbus Day"
-      },
-      "type": "festival",
-      "producer_id": null,
-      "confidence": 0.9999672551278073,
-      "mention_type": "MENTT_UNSET",
-      "mention_class": "MENTC_UNSET",
-      "role": ""
-    },
-    {
-      "span": {
-        "begin": 108,
-        "end": 114,
-        "text": "Silver"
-      },
-      "type": "color",
-      "producer_id": null,
-      "confidence": 0.7077578736747369,
-      "mention_type": "MENTT_UNSET",
-      "mention_class": "MENTC_UNSET",
-      "role": ""
-    }
-  ],
-  "producer_id": {
-    "name": "Entity-Mentions SIRE Workflow",
-    "version": "0.0.1"
-  }
-}
-```
-
-As per the above result, fine-tuned SIRE model can identify all trained custom Entities as `nationality`, `language`, `festival`, `periodical_set` and `Colors`.
 
 ## Conclusion 
 

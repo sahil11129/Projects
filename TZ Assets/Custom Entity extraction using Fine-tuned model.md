@@ -193,7 +193,7 @@ glove_model = watson_nlp.load(watson_nlp.download('embedding_glove_en_stock'))
 ```
 
 
-## 2.2 Fine-Tuning the models
+## 2.2 Fine-Tuning the model
 
 Fine-tuning a Sire model for Entity extraction involves training the model on a labeled training dataset includes examples of Entities.
 

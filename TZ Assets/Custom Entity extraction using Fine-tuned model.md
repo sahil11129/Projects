@@ -1,15 +1,15 @@
 
 # Custom Entity extraction using Fine-tuned model
 
-Personal Identifiable Information (PII) extraction refers to the process of identifying and extracting personal information from various sources, such as documents, databases, and websites. PII is any information that can be used to identify an individual, including their name, address, phone number, email address, social security number, driver's license number, credit card number, and more.
+Entity extraction is a crucial component in making sense of unstructured data, as it enables the identification of key pieces of information such as names of individuals and organizations, dates, prices, and facilities. With IBM Watson NLP, businesses can now easily extract entities using pre-trained models, and even fine-tune the model to extract custom entities specific to their needs.
 
-PII extraction is a crucial process in maintaining data privacy compliance while also extracting valuable insights from data. IBM Watson NLP models offer a powerful solution for PII extraction, utilizing natural language processing and machine learning techniques to accurately identify and extract personally identifiable information. Additionally, these models offer a flexible and scalable solution, allowing businesses to fine-tune the models to extract specific types of PII and integrate them into their applications for compliance with data privacy regulations. These models can help businesses improve operational efficiency by automating manual processes, reducing errors, and saving time and resources. 
+IBM Watson NLP is a powerful and versatile AI library that seamlessly integrates various components of IBM's natural language processing capabilities. It offers a standardized natural language processing layer, as well as a unified roadmap, architecture, and code stack that can be easily adopted across IBM's range of products. By leveraging the capabilities of IBM Watson NLP, businesses can gain deeper insights into their data, enabling them to make more informed decisions and stay ahead of the competition.
 
 The `watson_nlp` library is available on IBM Watson Studio as a runtime library so that you can directly use it for model training, evaluation, and prediction. The following figure shows the Watson NLP architecture.
 
 ![WS-flow](Screenshots/watson-studio-flow%201.03.17%20PM.png)
 
-This tutorial provides an introduction to IBM Watson NLP, covering the fundamental concepts and guiding you through the process of using <b>fine-tuning</b> them for PII extraction.
+This tutorial provides an introduction to IBM Watson NLP, covering the fundamental concepts and guiding you through the process of using <b>fine-tuning</b> them for Entity extraction.
 
 # Prerequisites
 
@@ -17,7 +17,7 @@ To follow the steps in this tutorial, you need:
 
 * An [IBMid](https://cloud.ibm.com/login?cm_sp=ibmdev-_-developer-tutorials-_-cloudreg)
 * A Watson Studio project
-* A Python [Fine-Tuned Models notebook](https://github.com/ibm-build-lab/Watson-NLP/blob/main/ML/PII-Extraction/PII%20Extraction%20-%20Fine-Tuned%20Models.ipynb)
+* A Python [Fine-Tuned Models notebook](https://github.com/ibm-build-lab/Watson-NLP/blob/main/ML/Entities-Keywords-Extraction/Entities%20Extraction%20-%20Fine-Tuned%20%20Models.ipynb)
 * Your [environment set up](https://developer.ibm.com/tutorials/set-up-your-ibm-watson-libraries-environment/)
 
 # Estimated time
@@ -26,26 +26,26 @@ It should take you approximately 1 hour to complete this tutorial.
 
 # Steps
 
-The tutorial demonstrates the extraction of PII using generated training data for custom PII entities and fine-tune the models. In this section, we focus on PII extraction models for the following PII entities: 
+The tutorial demonstrates the extraction of Entities using generated training data for custom Entities and fine-tune the models. In this section, we focus on Entity extraction models for the following entities: 
 
-|Pre-trained models |Fine-tuned models|
-|-------------------|-----------------|
-|Name|Employee ID|
-|Social Security Number|Salary|
-|Credit Card number|Educational Detail|
-|Email|Driving Licence Number|
-|URL|Gender|
-
-
-
-# Fine-Tune Watson NLP Models for custom PIIs
-
-
-## Step 1. Generate the data for custom PII 
+|Fine-tuned models|
+|-----------------|
+|Language|
+|Nationality|
+|periodical_set|
+|Festival|
+|Colors|
 
 
 
-### Generate the sample data set for train the custom PIIs using faker library. Below table shows the custom PIIs which demonstrate in this tutorial:
+# Fine-Tune Watson NLP Models for custom Entities 
+
+
+## Step 1. Generate the data for custom Entities  
+
+
+
+### Generate the sample data set for train the custom Entities using faker library. Below table shows the custom Entities which demonstrate in this tutorial:
 
 |Custom PIIs|
 |-----------|

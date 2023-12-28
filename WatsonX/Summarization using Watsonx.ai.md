@@ -41,7 +41,7 @@ You must meet these requirements to use the Prompt Lab:
 
 Now navigate to the watsonx.ai home page, select a project, and click on <b>Experiment with foundation models and build prompts</b> to access the dedicated Prompt Lab. Here, you can explore and optimize prompts for various foundation models, facilitating a seamless experimentation process within your chosen project.
 
-This practical demonstration uses the flan-ul2-20b model, specifically tuned with default parameters, to generate a concise summary of a sample conversation between an agent and a customer.
+This practical demonstration uses the `flan-ul2-20b` model, specifically tuned with default parameters, to generate a concise summary of a sample conversation between an agent and a customer.
 
 ## 1.1 Set instructions in the Prompt Lab:
 <b>Instruction:</b> The following text is a conversation between an agent and a customer. Read the text and then write a summary.

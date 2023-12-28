@@ -65,8 +65,9 @@ Customer: Thank you for your quick response. I appreciate your help in resolving
 Agent: You're welcome! If you have any further questions or concerns, feel free to reach out. We're here to help. Have a great day!
 ```
 
+![Watsonx.ai Prompt1](img/your_image_file.jpg)
 
-
+![Watsonx.ai Prompt1](img/your_image_file.jpg)
 ## Model Used: 
 flan-ul2-20b with Default Parameters
 

@@ -49,6 +49,9 @@ This practical demonstration uses the flan-ul2-20b model, specifically tuned wit
 ## Instructions in the Prompt Lab:
 <b>Instruction:</b> The following text is a conversation between an agent and a customer. Read the text and then write a summary.
 
+![Watsonx.ai Prompt1](img/WatsonX%20Prompt1.png)
+
+
 ## Input Data: Conversation Between Customer and Agent
 
 ```
@@ -65,14 +68,15 @@ Customer: Thank you for your quick response. I appreciate your help in resolving
 Agent: You're welcome! If you have any further questions or concerns, feel free to reach out. We're here to help. Have a great day!
 ```
 
-![Watsonx.ai Prompt1](img/your_image_file.jpg)
-
-![Watsonx.ai Prompt1](img/your_image_file.jpg)
 ## Model Used: 
 flan-ul2-20b with Default Parameters
 
+![Watsonx.ai Prompt1](img/WatsonX%20Prompt2.png)
+
+
 ## Output Summary:
 "Agent expedites the shipment of the customer's order. The customer will receive it within the next two business days."
+
 
 
 

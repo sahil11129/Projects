@@ -83,7 +83,7 @@ The conversation summary holds potential, and now we can explore the diverse LLM
 ## 2. Generate the Summary Using Watsonx.ai API (Notebook)
 
 
-Before we get started, make sure to create your personal API key (YOUR_ACCESS_TOKEN) on IBM Cloud. Check out the [documentation](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui) for a user-friendly guide on this important step. 
+Before we get started, make sure to create your personal API key (YOUR_ACCESS_TOKEN) on IBM Cloud. Check out the [documentation](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui) for a user-friendly guide on this important step. To execute these exercises, it's essential to set up and run a [Jupyter Notebook](https://github.com/sahil11129/Projects/blob/main/WatsonX/Summarisation%20%20Using%20WatsonX.ai.ipynb).
 
 
 2.1 Read the document
@@ -140,7 +140,7 @@ The response from the server, including the generated text or any relevant infor
 
 ![Response](img/result.png)
 
-
+In this blog, we'll take you through the incredible summarization powers of Watsonx.ai using two  methods: the Prompt Lab and the API. Think of the Prompt Lab as your play space to explore and get to know Watsonx.ai's summarization abilities. Now, if you're eager to bring summarization into your real-world applications, the API method is your go-to, offering a seamless way to integrate this solution for instant use. These approaches highlight how Watsonx.ai caters to both exploration and real-world implementation, making summarization a breeze. For a deeper understanding of Watsonx.ai and its features, please refer to the official [documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-wx.html?context=wx&audience=wdp) provided. 
 
 
 

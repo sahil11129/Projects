@@ -70,7 +70,6 @@ Agent: You're welcome! If you have any further questions or concerns, feel free 
 
 ## Model Used: 
 flan-ul2-20b with Default Parameters
-Here, we can test different LLM models to explore their capabilities and performance.
 
 
 ![Watsonx.ai Prompt1](img/WatsonX%20Prompt2.png)
@@ -79,6 +78,5 @@ Here, we can test different LLM models to explore their capabilities and perform
 ## Output Summary:
 "Agent expedites the shipment of the customer's order. The customer will receive it within the next two business days."
 
-
-
+The conversation summary holds potential, and now we can explore the diverse LLM models offered in watsonx.ai, adjusting parameters to assess their capabilities and performance. After the experimentation phase, saving our work as either a notebook or a prompt template is straightforward. Just click on "Save <b>work</b> at the top right corner to generate the corresponding code effortlessly.
 

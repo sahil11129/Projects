@@ -46,13 +46,13 @@ Navigate to the watsonx.ai home page, select a project, and click on <b>Experime
 
 This practical demonstration uses the flan-ul2-20b model, specifically tuned with default parameters, to generate a concise summary of a sample conversation between an agent and a customer.
 
-## Instructions in the Prompt Lab:
+## 1.1 Set instructions in the Prompt Lab:
 <b>Instruction:</b> The following text is a conversation between an agent and a customer. Read the text and then write a summary.
 
 ![Watsonx.ai Prompt1](img/WatsonX%20Prompt1.png)
 
 
-## Input Data: Conversation Between Customer and Agent
+## 1.2 Input Data: Conversation Between Customer and Agent
 
 ```
 Customer: Hi, I'm having trouble with my recent order. The delivery seems to be delayed, and I was wondering if you could provide some assistance.
@@ -79,6 +79,7 @@ flan-ul2-20b with Default Parameters
 `Agent expedites the shipment of the customer's order. The customer will receive it within the next two business days.`
 
 The conversation summary holds potential, and now we can explore the diverse LLM models offered in watsonx.ai, adjusting parameters to assess their capabilities and performance. After the experimentation phase, saving our work as either a notebook or a prompt template is straightforward. Just click on "Save <b>work</b> at the top right corner to generate the corresponding code effortlessly.
+
 
 ## 2. Generate the Summary Using Watsonx.ai API (Notebook)
 

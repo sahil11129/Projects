@@ -75,7 +75,7 @@ flan-ul2-20b with Default Parameters
 ## Output Summary:
 `Agent expedites the shipment of the customer's order. The customer will receive it within the next two business days.`
 
-The conversation summary holds potential, and now we can explore the diverse LLM models offered in watsonx.ai, adjusting parameters to assess their capabilities and performance. After the experimentation phase, saving our work as either a notebook or a prompt template is straightforward. Just click on "Save <b>work</b> at the top right corner to generate the corresponding code effortlessly.
+The conversation summary holds potential, and now we can explore the diverse LLM models offered in watsonx.ai, adjusting parameters to assess their capabilities and performance. After the experimentation phase, saving our work as either a notebook or a prompt template is straightforward. Just click on  <b>Save work</b> at the top right corner to generate the corresponding code effortlessly.
 
 
 ## 2. Generate the Summary Using Watsonx.ai API (Notebook)

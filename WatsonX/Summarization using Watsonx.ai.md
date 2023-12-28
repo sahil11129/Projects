@@ -26,7 +26,7 @@ It should take you approximately 60 minutes to complete this tutorial.
 
 # Steps
 
-## Generate the Summary Using Prompt Lab
+## 1. Generate the Summary Using Prompt Lab
 
 In the Prompt Lab in IBM watsonx.ai, you can experiment with prompting different foundation models, explore sample prompts, and save and share your best prompts. You use the Prompt Lab to engineer effective prompts that you submit to deployed foundation models for inferencing. You do not use the Prompt Lab to create new foundation models. 
 
@@ -76,7 +76,72 @@ flan-ul2-20b with Default Parameters
 
 
 ## Output Summary:
-"Agent expedites the shipment of the customer's order. The customer will receive it within the next two business days."
+`Agent expedites the shipment of the customer's order. The customer will receive it within the next two business days.`
 
 The conversation summary holds potential, and now we can explore the diverse LLM models offered in watsonx.ai, adjusting parameters to assess their capabilities and performance. After the experimentation phase, saving our work as either a notebook or a prompt template is straightforward. Just click on "Save <b>work</b> at the top right corner to generate the corresponding code effortlessly.
+
+## 2. Generate the Summary Using Watsonx.ai API (Notebook)
+
+
+Before we get started, make sure to create your personal API key (YOUR_ACCESS_TOKEN) on IBM Cloud. Check out the [documentation](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui) for a user-friendly guide on this important step. 
+
+
+2.1 Read the document
+
+Here, we can upload the document slated for summarization. Specifically, we have a file named [HealthCare Email.txt](https://github.com/sahil11129/Projects/blob/main/WatsonX/HealthCare%20Email.txt) containing the email content that we'll be summarizing. 
+
+
+```
+with open("HealthCare Email.txt", 'r') as file:
+    doc = file.read()
+```
+
+2.2 Set header with YOUR_ACCESS_TOKEN
+
+```
+headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+}
+```
+
+2.3 Set Model ID and Model Parameters 
+
+In the upcoming step, we'll focus on configuring the model by setting its unique Model ID. This involves defining specific model details and instrumentation, providing essential guidance to the model for task specification. Additionally, we'll leverage the document object loaded earlier as the input, coupled with adjusting parameters such as `max_new_tokens`, `min_new_tokens`, and `decoding_method`. This strategic customization ensures that the model is finely tuned to generate responses aligned with the desired outcomes.
+
+```
+json_data = {
+
+    'model_id': 'google/flan-ul2',
+
+
+    'inputs': ['Summarise the email text. \\n\\ntext: '+doc],
+
+        "parameters": {
+        "decoding_method": "greedy",
+        "max_new_tokens": 100,
+        "min_new_tokens": 50,
+        "repetition_penalty": 1.5
+      },
+}
+```
+2.4 Send API request to the Watsonx.ai server 
+
+This step involves sending a POST request to the Watsonx.ai server's text generation endpoint using the provided URL. The headers variable contains any necessary information for the request, and json_data holds the payload with details required for text generation. The response variable stores the server's response, allowing access to the generated text or additional information provided by the Watsonx.ai server.
+
+```
+response = requests.post('https://us-south.ml.cloud.ibm.com/ml/v1-beta/generation/text?version=2023-05-29', headers=headers, json=json_data)
+```
+
+2.5 Response from the Watsonx.ai server
+
+The response from the server, including the generated text or any relevant information, is stored in the response variable for further handling and analysis.
+
+
+![Response](img/result.png)
+
+
+
+
+
 

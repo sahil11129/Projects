@@ -70,6 +70,8 @@ Agent: You're welcome! If you have any further questions or concerns, feel free 
 
 ## Model Used: 
 flan-ul2-20b with Default Parameters
+Here, we can test different LLM models to explore their capabilities and performance.
+
 
 ![Watsonx.ai Prompt1](img/WatsonX%20Prompt2.png)
 

@@ -39,8 +39,7 @@ You must meet these requirements to use the Prompt Lab:
 - You must have the Editor or Admin role in the project.
 - The project must have an associated Watson Machine Learning service instance. Otherwise, you are prompted to associate the service when you open the Prompt Lab.
 
-
-Navigate to the watsonx.ai home page, select a project, and click on <b>Experiment with foundation models and build prompts</b> to access the dedicated Prompt Lab. Here, you can explore and optimize prompts for various foundation models, facilitating a seamless experimentation process within your chosen project.
+Now navigate to the watsonx.ai home page, select a project, and click on <b>Experiment with foundation models and build prompts</b> to access the dedicated Prompt Lab. Here, you can explore and optimize prompts for various foundation models, facilitating a seamless experimentation process within your chosen project.
 
 This practical demonstration uses the flan-ul2-20b model, specifically tuned with default parameters, to generate a concise summary of a sample conversation between an agent and a customer.
 

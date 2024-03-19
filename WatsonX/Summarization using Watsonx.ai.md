@@ -2,7 +2,7 @@
 
 Watsonx.ai is an integral component of the IBM WatsonX platform, which seamlessly integrates cutting-edge generative AI capabilities, harnessed from foundational models and traditional machine learning, into a dynamic studio encompassing the entire AI development lifecycle. With Watsonx.ai, you can train, validate, fine-tune, and deploy generative AI, foundational models, and machine learning capabilities. This streamlined approach allows you to construct AI applications in significantly less time and with reduced data requirements.
 
-Summarization is a valuable approach that enables us to cut through the noise and extract the essence of complex information. Whether dealing with lengthy emails, extensive documents, or dynamic chat interactions, the ability to generate concise summaries is a game-changer. This blog explores how Watsonx.ai takes summarization to the next level. Here we leverage the Watsonx.ai API within a Jupyter notebook to efficiently summarize the document.
+Summarization is a valuable approach that enables us to cut through the noise and extract the essence of complex information. Whether dealing with lengthy emails, extensive documents, or dynamic chat interactions, the ability to generate concise summaries is a game-changer. This blog explores how Watsonx.ai takes summarization to the next level. Here we leverage the Watsonx.ai prompt lab and Watsonx.ai API within a Jupyter notebook to efficiently summarize the document.
 
 # Prerequisites
 
@@ -39,20 +39,17 @@ You must meet these requirements to use the Prompt Lab:
 - You must have the Editor or Admin role in the project.
 - The project must have an associated Watson Machine Learning service instance. Otherwise, you are prompted to associate the service when you open the Prompt Lab.
 
+Now navigate to the watsonx.ai home page, select a project, and click on <b>Experiment with foundation models and build prompts</b> to access the dedicated Prompt Lab. Here, you can explore and optimize prompts for various foundation models, facilitating a seamless experimentation process within your chosen project.
 
-## Prompt Lab experiment 
+This practical demonstration uses the `flan-ul2-20b` model, specifically tuned with default parameters, to generate a concise summary of a sample conversation between an agent and a customer.
 
-Navigate to the watsonx.ai home page, select a project, and click on <b>Experiment with foundation models and build prompts</b> to access the dedicated Prompt Lab. Here, you can explore and optimize prompts for various foundation models, facilitating a seamless experimentation process within your chosen project.
-
-This practical demonstration uses the flan-ul2-20b model, specifically tuned with default parameters, to generate a concise summary of a sample conversation between an agent and a customer.
-
-## Instructions in the Prompt Lab:
+## 1.1 Set instructions in the Prompt Lab:
 <b>Instruction:</b> The following text is a conversation between an agent and a customer. Read the text and then write a summary.
 
 ![Watsonx.ai Prompt1](img/WatsonX%20Prompt1.png)
 
 
-## Input Data: Conversation Between Customer and Agent
+## 1.2 Input Data: Conversation Between Customer and Agent
 
 ```
 Customer: Hi, I'm having trouble with my recent order. The delivery seems to be delayed, and I was wondering if you could provide some assistance.
@@ -78,12 +75,13 @@ flan-ul2-20b with Default Parameters
 ## Output Summary:
 `Agent expedites the shipment of the customer's order. The customer will receive it within the next two business days.`
 
-The conversation summary holds potential, and now we can explore the diverse LLM models offered in watsonx.ai, adjusting parameters to assess their capabilities and performance. After the experimentation phase, saving our work as either a notebook or a prompt template is straightforward. Just click on "Save <b>work</b> at the top right corner to generate the corresponding code effortlessly.
+The conversation summary holds potential, and now we can explore the diverse LLM models offered in watsonx.ai, adjusting parameters to assess their capabilities and performance. After the experimentation phase, saving our work as either a notebook or a prompt template is straightforward. Just click on  <b>Save work</b> at the top right corner to generate the corresponding code effortlessly.
+
 
 ## 2. Generate the Summary Using Watsonx.ai API (Notebook)
 
 
-Before we get started, make sure to create your personal API key (YOUR_ACCESS_TOKEN) on IBM Cloud. Check out the [documentation](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui) for a user-friendly guide on this important step. 
+Before we get started, make sure to create your personal API key (YOUR_ACCESS_TOKEN) on IBM Cloud. Check out the [documentation](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui) for a user-friendly guide on this important step. To execute these exercises, it's essential to set up and run a [Jupyter Notebook](https://github.com/sahil11129/Projects/blob/main/WatsonX/Summarisation%20%20Using%20WatsonX.ai.ipynb).
 
 
 2.1 Read the document
@@ -140,7 +138,7 @@ The response from the server, including the generated text or any relevant infor
 
 ![Response](img/result.png)
 
-
+In this blog, we'll take you through the incredible summarization powers of Watsonx.ai using two  methods: the Prompt Lab and the API. Think of the Prompt Lab as your play space to explore and get to know Watsonx.ai's summarization abilities. Now, if you're eager to bring summarization into your real-world applications, the API method is your go-to, offering a seamless way to integrate this solution for instant use. These approaches highlight how Watsonx.ai caters to both exploration and real-world implementation, making summarization a breeze. For a deeper understanding of Watsonx.ai and its features, please refer to the official [documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-wx.html?context=wx&audience=wdp) provided. 
 
 
 

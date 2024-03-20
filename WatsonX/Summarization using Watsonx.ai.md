@@ -63,7 +63,7 @@ json_data = {
     'model_id': 'google/flan-ul2',
 
 
-    'inputs': ['Summarise the email text. \\n\\ntext: '+doc],
+    'inputs': ['Summarize the email text. \\n\\ntext: '+doc],
 
         "parameters": {
         "decoding_method": "greedy",

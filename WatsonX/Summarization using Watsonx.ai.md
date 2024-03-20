@@ -93,6 +93,20 @@ The response from the server, including the generated text or any relevant infor
 
 
 
+## 2.2 Input Data: Conversation Between Customer and Agent
+
+```
+Customer: Hi, I'm having trouble with my recent order. The delivery seems to be delayed, and I was wondering if you could provide some assistance.
+Agent: Hello! I'm sorry to hear about the delay in your order. Could you please provide me with your order number so that I can look into the details for you?
+Customer: Sure, my order number is 123456789.
+Agent: Thank you for providing that. Let me check the status of your order. It seems there was a slight delay in processing, and I apologize for any inconvenience caused. Rest assured, I'll expedite the shipment, and you should receive it within the next two business days.
+Customer: Thank you for your quick response. I appreciate your help in resolving this issue.
+Agent: You're welcome! If you have any further questions or concerns, feel free to reach out. We're here to help. Have a great day!
+```
+
+## Model Used: 
+flan-ul2-20b with Default Parameters
+
 
 In this blog, we'll take you through the incredible summarization powers of Watsonx.ai using two  methods: the Prompt Lab and the API. Think of the Prompt Lab as your play space to explore and get to know Watsonx.ai's summarization abilities. Now, if you're eager to bring summarization into your real-world applications, the API method is your go-to, offering a seamless way to integrate this solution for instant use. These approaches highlight how Watsonx.ai caters to both exploration and real-world implementation, making summarization a breeze. For a deeper understanding of Watsonx.ai and its features, please refer to the official [documentation](https://dataplatform.cloud.ibm.com/docs/content/wsj/getting-started/overview-wx.html?context=wx&audience=wdp) provided. 
 

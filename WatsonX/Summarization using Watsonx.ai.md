@@ -91,54 +91,6 @@ The response from the server, including the generated text or any relevant infor
 
 ## 2. Chat Summarization using Watsonx.ai
 
-In the Prompt Lab in IBM watsonx.ai, you can experiment with prompting different foundation models, explore sample prompts, and save and share your best prompts. You use the Prompt Lab to engineer effective prompts that you submit to deployed foundation models for inferencing. You do not use the Prompt Lab to create new foundation models. 
-
-### Requirements
-If you signed up for watsonx.ai and you have a sandbox project, all requirements are met and you're ready to use the Prompt Lab.
-
-You must meet these requirements to use the Prompt Lab:
-
-- You must have a project.
-- You must have the Editor or Admin role in the project.
-- The project must have an associated Watson Machine Learning service instance. Otherwise, you are prompted to associate the service when you open the Prompt Lab.
-
-Now navigate to the watsonx.ai home page, select a project, and click on <b>Experiment with foundation models and build prompts</b> to access the dedicated Prompt Lab. Here, you can explore and optimize prompts for various foundation models, facilitating a seamless experimentation process within your chosen project.
-
-This practical demonstration uses the `flan-ul2-20b` model, specifically tuned with default parameters, to generate a concise summary of a sample conversation between an agent and a customer.
-
-## 2.1 Set instructions in the Prompt Lab:
-<b>Instruction:</b> The following text is a conversation between an agent and a customer. Read the text and then write a summary.
-
-![Watsonx.ai Prompt1](img/WatsonX%20Prompt1.png)
-
-
-## 2.2 Input Data: Conversation Between Customer and Agent
-
-```
-Customer: Hi, I'm having trouble with my recent order. The delivery seems to be delayed, and I was wondering if you could provide some assistance.
-
-Agent: Hello! I'm sorry to hear about the delay in your order. Could you please provide me with your order number so that I can look into the details for you?
-
-Customer: Sure, my order number is 123456789.
-
-Agent: Thank you for providing that. Let me check the status of your order. It seems there was a slight delay in processing, and I apologize for any inconvenience caused. Rest assured, I'll expedite the shipment, and you should receive it within the next two business days.
-
-Customer: Thank you for your quick response. I appreciate your help in resolving this issue.
-
-Agent: You're welcome! If you have any further questions or concerns, feel free to reach out. We're here to help. Have a great day!
-```
-
-## Model Used: 
-flan-ul2-20b with Default Parameters
-
-
-![Watsonx.ai Prompt1](img/WatsonX%20Prompt2.png)
-
-
-## Output Summary:
-`Agent expedites the shipment of the customer's order. The customer will receive it within the next two business days.`
-
-The conversation summary holds potential, and now we can explore the diverse LLM models offered in watsonx.ai, adjusting parameters to assess their capabilities and performance. After the experimentation phase, saving our work as either a notebook or a prompt template is straightforward. Just click on  <b>Save work</b> at the top right corner to generate the corresponding code effortlessly.
 
 
 
